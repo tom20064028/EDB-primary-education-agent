@@ -71,6 +71,14 @@ returns one deterministic refusal sentence. A regression test verifies that a ze
 tool call causes exactly one provider request. The browser error parser was also hardened
 so FastAPI validation arrays cannot render as `[object Object]`.
 
+A later repeated-query test exposed another source of variance: the model sometimes copied
+the full question into the tool call and sometimes broadened it to a generic query such as
+`教育局`. The generic query retrieved unrelated pages and incorrectly made the UI look
+supported. Tool arguments are model output, so the application now treats the original user
+question as authoritative when executing retrieval. A regression test deliberately supplies
+the broadened model query and verifies that the unsupported school-uniform-discount question
+still returns zero results, no citations, and no second provider request.
+
 ## AI suggestions rejected or constrained
 
 - A broad recursive EDB crawler was rejected. The implementation is limited to links in the seed page's primary content area because recursive crawling increases noise, load, and scope ambiguity.
