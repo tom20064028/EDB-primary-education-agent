@@ -59,6 +59,7 @@ Never commit `.env` or `frontend/.env.local`.
 
 ```bash
 python3.12 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
 .venv/bin/python -m pip install -e 'backend[dev]'
 ```
 
@@ -177,3 +178,5 @@ pnpm build
 ## AI-assisted development
 
 AI coding assistance was used to draft requirements, implementation, tests, and interface copy. See [AI_DEVELOPMENT_LOG.md](AI_DEVELOPMENT_LOG.md) for the working record. Anyone presenting or submitting this project should review the code, run the acceptance flow, document their own changes, and be able to explain every core function.
+
+The concise submission note is available in [ONE_PAGE_TECHNICAL_NOTE.md](ONE_PAGE_TECHNICAL_NOTE.md).

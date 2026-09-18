@@ -14,3 +14,6 @@ frontend/.next/
 frontend/out/
 frontend/.env.local
 frontend/.vercel/
+
+# Local application package; the Markdown technical note remains in the repository.
+submission/
